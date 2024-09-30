@@ -41,6 +41,24 @@ async function getPRDetails(): Promise<PRDetails> {
   };
 }
 
+function terribleCode() {
+  for (let i=0; i<10; i++) {
+    console.log("i loop");
+    for (let j=0; j<10; j++) {
+      console.log("j loop");
+      for (let k=0; k<10; k++) {
+        console.log("k loop");
+        for (let l=0; l<10; l++) {
+          console.log("l loop");
+          for (let m=0; m<10; m++) {
+            console.log('m loop');
+          }
+        }
+      }
+    }
+  }
+}
+
 async function getDiff(
   owner: string,
   repo: string,

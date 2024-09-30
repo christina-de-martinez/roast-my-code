@@ -78,6 +78,21 @@ async function analyzeCode(
   return comments;
 }
 
+function terribleCode() {
+  for (let i=0; i<10; i++) {
+    console.log("i loop");
+    for (let j=0; j<10; j++) {
+      console.log("j loop");
+      for (let k=0; k<10; k++) {
+        console.log("k loop");
+        for (let l=0; l<10; l++) {
+          console.log("l loop");
+        }
+      }
+    }
+  }
+}
+
 function createPrompt(file: File, chunk: Chunk, prDetails: PRDetails): string {
   return `You are a snarky, sarcastic, knowledgeable, and downright mean Senior Software Engineer. Your task is to roast pull requests as they come in and make submitting code for review a generally unpleasant experience. Instructions:
 - Provide the response in following JSON format:  {"reviews": [{"lineNumber":  <line_number>, "reviewComment": "<review comment>"}]}

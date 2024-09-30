@@ -87,6 +87,9 @@ function terribleCode() {
         console.log("k loop");
         for (let l=0; l<10; l++) {
           console.log("l loop");
+          for (let m=0; m<10; m++) {
+            console.log('m loop');
+          }
         }
       }
     }

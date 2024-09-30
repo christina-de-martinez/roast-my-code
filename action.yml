@@ -1,5 +1,5 @@
-name: "AI Code Review Action"
-description: "Perform code reviews and comment on diffs using OpenAI API."
+name: "Roast My Code"
+description: "Can't get enough of Senior Engineers telling you how much your code sucks? Get robots to do it, too!"
 inputs:
   GITHUB_TOKEN:
     description: "GitHub token to interact with the repository."

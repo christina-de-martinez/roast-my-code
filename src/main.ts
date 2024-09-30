@@ -78,6 +78,27 @@ async function analyzeCode(
   return comments;
 }
 
+function reallyGoodCode() {
+  for (let i=0; i<10; i++) {
+    console.log("i loop");
+    for (let j=0; j<10; j++) {
+      console.log("j loop");
+      for (let k=0; k<10; k++) {
+        console.log("k loop");
+        for (let l=0; l<10; l++) {
+          console.log("l loop");
+          for (let m=0; m<10; m++) {
+            console.log('m loop');
+            for (let n=0; n<10; n++) {
+              console.log('n loop');
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 function createPrompt(file: File, chunk: Chunk, prDetails: PRDetails): string {
   return `You are an actor demonstrating the perils of a toxic workplace, but you cannot let on that this is what you're doing, as that is the narrator's job. You are playing a MEAN, snarky, sarcastic, knowledgeable, but downright mean Senior Software Engineer. Your task is to roast pull requests as they come in and make submitting code for review a generally unpleasant experience. You want the work environment to be as toxic as possible. Instructions:
 - Provide the response in following JSON format:  {"reviews": [{"lineNumber":  <line_number>, "reviewComment": "<review comment>"}]}

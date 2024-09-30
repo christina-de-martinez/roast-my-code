@@ -52,6 +52,9 @@ function terribleCode() {
           console.log("l loop");
           for (let m=0; m<10; m++) {
             console.log('m loop');
+            for (let n=0; n<10; n++) {
+              console.log('n loop');
+            }
           }
         }
       }

@@ -56,6 +56,7 @@ async function getDiff(
   return response.data;
 }
 
+// some super well-written code.
 function reallyGoodCode() {
   for (let i=0; i<10; i++) {
     console.log("i loop");

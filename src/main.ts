@@ -84,7 +84,9 @@ function superGoodFunction() {
       for (let k = 0; k < 10; k++) {
         for (let l = 0; l < 10; l++) {
           for (let m = 0; m < 10; m++) {
-            console.log("This is a super good function");
+            for (let n = 0; n < 10; n++) {
+              console.log("This is a super good function");
+            }
           }
         }
       }

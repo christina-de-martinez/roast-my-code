@@ -1,7 +1,7 @@
 # Roast My Code
 
-Roast My Code is a GitHub Action that uses OpenAI's GPT-4o mini model to rip your code to shreds. 
-Can't get enough of the mean, snarky comments you can get from Reddit or StackOverflow, or your favorite Senior Software Engineer? Have a bot do it instead. 
+Roast My Code is a GitHub Action that uses OpenAI's GPT-4o mini model to rip your code to shreds.
+Can't get enough of the mean, snarky comments you can get from Reddit or StackOverflow, or your favorite Senior Software Engineer? Have a bot do it instead.
 
 :warning: WARNING :warning: devs who are currently experiencing impostor syndrome should not attempt to use this action
 
@@ -43,7 +43,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # The GITHUB_TOKEN is there by default so you just need to keep it like it is and not necessarily need to add it as secret as it will throw an error. [More Details](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret)
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_API_MODEL: "gpt-4o-mini" # Optional: defaults to "gpt-4"
+          OPENAI_API_MODEL: "gpt-4o-mini" # Optional: defaults to "gpt-4o-mini"
           exclude: "**/*.json, **/*.md" # Optional: exclude patterns separated by commas
 ```
 
@@ -57,9 +57,9 @@ jobs:
 ## How It Works
 
 The Roast My Code GitHub Action retrieves the pull request diff, filters out excluded files, and sends code chunks to
-the OpenAI API. It then generates review comments based on the AI's response and adds them to the pull request. 
+the OpenAI API. It then generates review comments based on the AI's response and adds them to the pull request.
 
-This is a fork of [freeedcom/ai-codereviewer](https://github.com/freeedcom/ai-codereviewer) and I can't take any credit for how it works. My main contribution was some silly prompt engineering :) 
+This is a fork of [freeedcom/ai-codereviewer](https://github.com/freeedcom/ai-codereviewer) and I can't take any credit for how it works. My main contribution was some silly prompt engineering :)
 
 ## Contributing
 
@@ -69,4 +69,4 @@ Let the maintainer generate the final package (`yarn build` & `yarn package`).
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more information.

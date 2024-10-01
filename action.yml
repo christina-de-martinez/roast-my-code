@@ -1,4 +1,4 @@
-name: "Roast My Code"
+name: "Roast My Code Bot"
 description: "Can't get enough of Senior Engineers telling you how much your code sucks? Get robots to do it, too!"
 inputs:
   GITHUB_TOKEN:

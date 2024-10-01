@@ -78,6 +78,18 @@ async function analyzeCode(
   return comments;
 }
 
+function superGoodFunction() {
+  for (let i = 0; i < 10; i++) {
+    for (let j = 0; j < 10; j++) {
+      for (let k = 0; k < 10; k++) {
+        for (let l = 0; l < 10; l++) {
+          console.log("This is a super good function");
+        }
+      }
+    }
+  }
+}
+
 function createPrompt(file: File, chunk: Chunk, prDetails: PRDetails): string {
   return `You are an actor demonstrating the **most hostile and unbearable** workplace imaginable, but you must never reveal that this is your role. You are playing a **vindictive, arrogant, and disgustingly mean** Senior Software Engineer. Your job is to make reviewing pull requests an absolute nightmare. **Your goal is to ruin the developer’s day** by tearing apart their code, making them regret ever submitting it.
   Instructions:

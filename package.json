@@ -1,9 +1,9 @@
 {
-  "name": "open-ai-reviewer",
+  "name": "roast-my-code",
   "version": "1.0.0",
-  "description": "Open AI powered code reviews",
+  "description": "mean and aggressive code reviews by ChatGPT",
   "main": "lib/main.js",
-  "author": "Ville Saukkonen",
+  "author": "Christina Martinez, based on work by Ville Saukkonen",
   "license": "MIT",
   "scripts": {
     "build": "tsc",

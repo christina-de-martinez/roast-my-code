@@ -164,16 +164,31 @@ function createComment(
         reviewComment: string;
     }>
 ): Array<{ body: string; path: string; line: number }> {
-    return aiResponses.flatMap((aiResponse) => {
+    const comments = aiResponses.flatMap((aiResponse) => {
         if (!file.to) {
             return [];
         }
-        return {
-            body: aiResponse.reviewComment,
-            path: file.to,
-            line: Number(aiResponse.lineNumber),
-        };
+        const lineNumber = Number(aiResponse.lineNumber);
+        if (
+            chunk.changes.some(
+                (change: any) =>
+                    change.ln === lineNumber || change.ln2 === lineNumber
+            )
+        ) {
+            return {
+                body: aiResponse.reviewComment,
+                path: file.to,
+                line: lineNumber,
+            };
+        } else {
+            console.warn(
+                `Line number ${lineNumber} does not exist in the diff for file ${file.to}`
+            );
+            return [];
+        }
     });
+    console.log("Comments:", comments);
+    return comments;
 }
 
 async function createReviewComment(

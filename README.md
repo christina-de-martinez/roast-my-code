@@ -39,7 +39,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Roast My Code
-        uses: your-username/roast-my-code@main
+        uses: christina-de-martinez/roast-my-code@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # The GITHUB_TOKEN is there by default so you just need to keep it like it is and not necessarily need to add it as secret as it will throw an error. [More Details](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#about-the-github_token-secret)
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -47,7 +47,7 @@ jobs:
           exclude: "**/*.json, **/*.md" # Optional: exclude patterns separated by commas
 ```
 
-4. Replace `your-username` with your GitHub username or organization name where the AI Code Reviewer repository is
+4. Replace `christina-de-martinez` with your GitHub username or organization name where the AI Code Reviewer repository is
    located.
 
 5. Customize the `exclude` input if you want to ignore certain file patterns from being reviewed.

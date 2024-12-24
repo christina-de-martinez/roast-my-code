@@ -174,16 +174,27 @@ function getAIResponse(prompt) {
     });
 }
 function createComment(file, chunk, aiResponses) {
-    return aiResponses.flatMap((aiResponse) => {
+    const comments = aiResponses.flatMap((aiResponse) => {
         if (!file.to) {
             return [];
         }
-        return {
-            body: aiResponse.reviewComment,
-            path: file.to,
-            line: Number(aiResponse.lineNumber),
-        };
+        const lineNumber = Number(aiResponse.lineNumber);
+        // Ensure the line number exists in the chunk
+        if (chunk.changes.some((change) => change.ln === lineNumber || change.ln2 === lineNumber)) {
+            return {
+                body: aiResponse.reviewComment,
+                path: file.to,
+                line: lineNumber,
+            };
+        }
+        else {
+            console.warn(`Line number ${lineNumber} does not exist in the diff for file ${file.to}`);
+            return [];
+        }
     });
+    // Log the comments before returning
+    console.log("Comments:", comments);
+    return comments;
 }
 function createReviewComment(owner, repo, pull_number, comments) {
     return __awaiter(this, void 0, void 0, function* () {
